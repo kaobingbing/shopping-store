@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Toast } from 'vant'
 import store from '@/store'
 const instance = axios.create({
-  baseURL: 'http://cba.itlike.com/public/index.php?s=/api/',
+  baseURL: '',
   timeout: 5000
 })
 

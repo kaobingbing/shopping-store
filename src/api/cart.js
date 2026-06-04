@@ -1,27 +1,43 @@
 import request from '@/utils/request'
 
 export const addCart = (goodsId, goodsNum, goodsSkuId) => {
-  return request.post('http://smart-shop.itheima.net/index.php?s=/api/cart/add', {
+  return request.post('/index.php', {
     goodsId,
     goodsNum,
     goodsSkuId
+  }, {
+    params: {
+      s: '/api/cart/add'
+    }
   })
 }
 
 export const getCartList = () => {
-  return request.get('http://smart-shop.itheima.net/index.php?s=/api/cart/list')
+  return request.get('/index.php', {
+    params: {
+      s: '/api/cart/list'
+    }
+  })
 }
 
 export const changeCount = (goodsId, goodsNum, goodsSkuId) => {
-  return request.post('http://smart-shop.itheima.net/index.php?s=/api/cart/update', {
+  return request.post('/index.php', {
     goodsId,
     goodsNum,
     goodsSkuId
+  }, {
+    params: {
+      s: '/api/cart/update'
+    }
   })
 }
 
 export const delSelect = (cartIds) => {
-  return request.post('http://smart-shop.itheima.net/index.php?s=/api/cart/clear', {
+  return request.post('/index.php', {
     cartIds
+  }, {
+    params: {
+      s: '/api/cart/clear'
+    }
   })
 }
